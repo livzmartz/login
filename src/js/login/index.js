@@ -1,6 +1,6 @@
 import { validarFormulario, Toast } from "../funciones";
 
-const formLogin = document.querySelector('form')
+const formLogin = document.querySelector('form');
 
 const login = async e => {
     e.preventDefault();
@@ -9,42 +9,42 @@ const login = async e => {
         Toast.fire({
             icon: 'info',
             title: 'Debe llenar todos los campos'
-        })
+        });
         return;
     }
 
     try {
-        const url = '/login/API/login'
+        const url = "/login/API/login"; 
 
         const body = new FormData(formLogin);
 
         const headers = new Headers();
-
         headers.append("X-Requested-With", "fetch");
 
         const config = {
             method: 'POST',
             headers,
             body
-        }
+        };
+
         const respuesta = await fetch(url, config);
         const data = await respuesta.json();
 
-        const { codigo, mensaje, detalle} = data;
+        const {codigo, mensaje, detalle} = data;
         let icon = 'info';
-        if (codigo ==1){
+        if(codigo == 1){
             icon = 'success'
-        }else if (codigo == 2){
+        }else if(codigo == 2){
             icon = 'warning'
-        } else {
+        }else{
             icon = 'error'
         }
 
-        Toast.fire ({
+        Toast.fire({
             title : mensaje,
             icon
         })
-
+      
     } catch (error) {
         console.log(error);
     }
