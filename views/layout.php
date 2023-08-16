@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<h<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +7,7 @@
     <script src="build/js/app.js"></script>
     <link rel="shortcut icon" href="<?= asset('images/cit.png') ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?= asset('build/styles.css') ?>">
-    <title>LOGIN</title>
+    <title>login</title>
 </head>
 <body class="bg-image bg-opacity-50">
 	<div class="bg-light bg-opacity-10 w-100" style="height: 100vh;">
