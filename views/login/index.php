@@ -20,4 +20,5 @@
         </div class="mt-3">
             <p class="mb-0 text-center">¿No tienes una cuenta?<a href="/login/registro" class="text-primary fw-bold ms-2">Registrate</a></p> 
         </div>
+        <scrip src="<?=asset('./build/js/login/index.js')?>"></scrip>
 </div>
