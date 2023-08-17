@@ -34,6 +34,7 @@ const login = async e => {
         let icon = 'info';
         if(codigo == 1){
             icon = 'success'
+        window.location.href = '/login/menu'
         }else if(codigo == 2){
             icon = 'warning'
         }else{
