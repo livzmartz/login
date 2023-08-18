@@ -1,3 +1,4 @@
+<?php if(isset($_SESSION['auth_user'])){?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,7 +43,7 @@
                 </ul> 
                 <div class="col-lg-1 d-grid mb-lg-0 mb-2">
                     <!-- Ruta para salir -->
-                    <a href="/login/" class="btn btn-danger"><i class="bi bi-arrow-bar-left"></i>SALIR</a>
+                    <button class="btn btn-danger" id="cerrarsesion"></i>SALIR</button>
                 </div>
             </div>
         </div>
@@ -66,3 +67,14 @@
     </div>
 </body>
 </html>
+
+<?php }
+
+else{
+
+    header("Location: /login/");
+}
+
+?>
+
+<script src="<?= asset('./build/js/menu/index.js') ?>"></script>
