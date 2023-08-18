@@ -12,7 +12,8 @@ $router->setBaseURL('/' . $_ENV['APP_NAME']);
 $router->get('/', [LoginController::class,'index']);
 $router->post('/API/login', [LoginController::class,'loginAPI']);
 $router->get('/menu', [MenuController::class,'index']);
-$router->get('/cerrarsesion', [MenuController::class,'cerrarsesion']);
+$router->get('/API/closeSession', [MenuController::class,'closeSessionAPI']);
+// $router->get('/cerrarsesion', [MenuController::class,'cerrarsesion']);
 
 // Comprueba y valida las rutas, que existan y les asigna las funciones del Controlador
 $router->comprobarRutas();

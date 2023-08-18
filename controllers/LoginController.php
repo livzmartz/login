@@ -8,7 +8,11 @@ use Model\Usuario;
 class LoginController {
 
     public static function index(Router $router) {
-        $router->render('login/index', []);
+        if ($_SESSION['auth_user'] == "") {
+            $router->render('login/index', []);
+        } else {
+            $router->render('menu/index', []);
+        }
     }
 
     public static function loginAPI() {
@@ -27,7 +31,9 @@ class LoginController {
 
                     echo json_encode([
                         'codigo' => 1,
-                        'mensaje' => "Sesión iniciada correctamente. Bienvenido $nombre"
+                        'mensaje' => "Sesión iniciada correctamente. Bienvenido $nombre",
+                        'redireccion' => '/login/menu'
+                        
                     ]);
                 } else {
                     echo json_encode([

@@ -1,4 +1,3 @@
-<?php if(isset($_SESSION['auth_user'])){?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -41,10 +40,13 @@
                     </div> 
 
                 </ul> 
+
+            <form>    
                 <div class="col-lg-1 d-grid mb-lg-0 mb-2">
                     <!-- Ruta para salir -->
-                    <button class="btn btn-danger" id="cerrarsesion"></i>SALIR</button>
+                    <button class="btn btn-danger" type="submit" id="closeSession" name="closeSession"><i class="bi bi-arrow-bar-left"></i>SALIR</button>
                 </div>
+            </form>
             </div>
         </div>
         
@@ -65,16 +67,10 @@
             </div>
         </div>
     </div>
+
+    <script src="<?= asset('./build/js/menu/index.js') ?>"></script>
+    
 </body>
 </html>
 
-<?php }
 
-else{
-
-    header("Location: /login/");
-}
-
-?>
-
-<script src="<?= asset('./build/js/menu/index.js') ?>"></script>
